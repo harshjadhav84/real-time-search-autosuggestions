@@ -17,7 +17,7 @@ This project implements a Real-Time Search with Auto-Suggestions feature that dy
 
 ## How to View the Project
 ### Live Demo
-Visit the live website here: [Dream Destinations Website](https://harshjadhav84.github.io/real-time-search-autosuggestions/)
+Visit the live website here:[ (https://harshjadhav84.github.io/real-time-search-autosuggestions/)](https://harshjadhav84.github.io/real-time-search-autosuggestions/)
 
 ## **How It Works**
 1. **User Interaction**:
