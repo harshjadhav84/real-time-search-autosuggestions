@@ -54,7 +54,6 @@ const mockData = [
 - To use a real API instead of the mock data, follow these steps:
   - Step 1: Sign Up for an API Key at Unsplash
     - Go to the Unsplash Developer Portal.
-      - aa
     - Sign in or create an account if you don't have one.
     - Click Your Applications from the menu.
     - Click on New Application to create a new app.
