@@ -15,6 +15,10 @@ This project implements a Real-Time Search with Auto-Suggestions feature that dy
 
 ---
 
+## How to View the Project
+### Live Demo
+Visit the live website here: [Dream Destinations Website](https://harshjadhav84.github.io/Dream-Destinations-Travel-Agency/)
+
 ## **How It Works**
 1. **User Interaction**:
    - The user types a query into the search bar.
@@ -29,64 +33,48 @@ This project implements a Real-Time Search with Auto-Suggestions feature that dy
 
 4. **Error and Empty States**:
    - If no matches are found, a "No results found!" message is displayed.
-   - If an error occurs (e.g., network failure), a user-friendly error message is shown.
+   - If an error occurs a user-friendly error message is shown.
 
 ---
 
-## **How to Configure the API or Data Source**
+## **How to Configure the Data Source**
 
 ### Using Mock Data
 - The project uses a predefined array (`mockData`) in the `script.js` file as the data source.
 - This is ideal for testing without connecting to a live API.
 
-### Connecting to an API
-1. Replace the mock data logic in the `fetchSuggestions` function in `script.js` with an API call. Example:
-   ```javascript
-   async function fetchSuggestions(query) {
-       try {
-           const response = await fetch(`https://api.example.com/search?q=${query}`);
-           const results = await response.json();
-           // Process and display results...
-       } catch (error) {
-           errorMessage.classList.remove('d-none');
-           console.error('Error fetching suggestions:', error);
-       }
-   }
-   ```
 
-2. Ensure the API endpoint returns a JSON response in the following format:
-   ```json
-   [
-       "Apple",
-       "Banana",
-       "Cherry",
-       "Date",
-       "Elderberry"
-   ]
-   ```
+## Local Setup
+To run the project locally on your computer, follow these steps:
 
-3. Update the API endpoint in the script to match your backend configuration.
-
-4. Test the feature with live API data.
-
----
-
-## **Setup Instructions**
-
-1. Clone the repository:
+1. **Clone the Repository**:
+   - Open your terminal or command prompt.
+   - Clone this repository using the following command:
    ```bash
-   git clone https://github.com/your-username/real-time-search-autosuggestions.git
+   git clone https://github.com/harshjadhav84/real-time-search-autosuggestions.git
    ```
 
-2. Navigate to the project directory:
+2. **Navigate to the Project Directory**:
+   - Change your working directory to the project folder:
    ```bash
    cd real-time-search-autosuggestions
    ```
 
-3. Open the `index.html` file in your browser to view and test the feature.
+3. **Open the Project in a Code Editor (Optional)**:
+   - If you'd like to view or edit the code, open the project in your preferred code editor:
+     ```bash
+     code .  # For Visual Studio Code
+     ```
 
-4. (Optional) Update the `fetchSuggestions` function to connect to your API.
-
+4. **Run the Project**:
+   - Open the `index.html` file in your web browser:
+     - **Option 1**: Double-click the `index.html` file in your file explorer.
+     - **Option 2**: Use the terminal:
+       ```bash
+       open index.html       # macOS
+       start index.html      # Windows
+       xdg-open index.html   # Linux
+       ```
 ---
 
 ## **File Structure**
@@ -114,14 +102,3 @@ real-time-search-autosuggestions/
 3. Validate performance with a large dataset (mock or real).
 
 ---
-
-## **Future Enhancements**
-- Add support for pagination in results.
-- Incorporate advanced filtering options.
-- Integrate with a real-time API for live data.
-
----
-
-## **Contact**
-For any issues or suggestions, please contact: [your-email@example.com]
-
