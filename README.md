@@ -37,11 +37,12 @@ Visit the live website here:[ (https://harshjadhav84.github.io/real-time-search-
 
 ---
 
-## **How to Configure the Data Source**
-
+How to Configure the Data Source
 ### Using Mock Data
 - The project uses a predefined array (`mockData`) in the `script.js` file as the data source.
 - This is ideal for testing without connecting to a live API.
+
+
 
 
 ## Local Setup
