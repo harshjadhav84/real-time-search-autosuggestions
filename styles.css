@@ -1,0 +1,124 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Warm gradient */
+    color: #343a40;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions-container {
+    position: absolute;
+    top: calc(100% + 5px); /* Position directly below the input field with a small gap */
+    left: 0;
+    width: 100%; /* Ensure the suggestions box has the same width as the search bar */
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive for Devices <= 576px */
+@media (max-width: 576px) {
+   
+    #search-bar {
+        font-size: 1.1rem; /* Increase font size for better readability on mobile */
+        padding: 12px 20px; /* More padding for a better touch experience */
+    }
+
+    #clear-btn {
+        padding: 0 12px; 
+        font-size: 1.4rem; /* Slightly smaller button for mobile */
+    }
+
+    #suggestions-container {
+        font-size: 0.95rem; /* Slightly smaller text on mobile */
+        width: 100%; /* Ensure suggestion container is aligned and takes full width */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ensure suggestions container is easy to interact with on mobile */
+    #suggestions-container li {
+        padding: 12px 15px; /* Increase padding for mobile touch interaction */
+    }
+}
+
+#suggestions-container li {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+#suggestions-container li:hover {
+    background-color: #f8f9fa;
+}
+
+#no-results {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+#clear-btn {
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 15px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Adds gap between the search field and clear button */
+}
+
+
+#clear-btn:hover {
+    background-color: #ff4e4e;
+}
+
+#error-message {
+    font-style: italic;
+    color: red;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px;
+}
+
+.list-group-item.active {
+    background-color: #74ebd5;
+    color: white;
+}
+
