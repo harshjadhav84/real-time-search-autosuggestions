@@ -162,8 +162,8 @@ real-time-search-autosuggestions/
 ---
 
 ## **Testing**
-1. Ensure the feature works on all major browsers (Chrome, Firefox, Safari, Edge).
-2. Test responsiveness on both desktop and mobile devices.
+1. Ensured the feature works on all major browsers (Chrome, Firefox, Safari, Edge).
+2. Tested responsiveness on both desktop and mobile devices.
 3. Validate performance with a large dataset (mock or real).
 
 ---
