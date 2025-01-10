@@ -37,13 +37,77 @@ Visit the live website here:[ (https://harshjadhav84.github.io/real-time-search-
 
 ---
 
-How to Configure the Data Source
+## **How to Configure the Data Source** ##
 ### Using Mock Data
 - The project uses a predefined array (`mockData`) in the `script.js` file as the data source.
 - This is ideal for testing without connecting to a live API.
 
+```
+// Mock data array (currently used)
+const mockData = [
+    'Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 'Zebra'
+];
 
+```
 
+### Replacing Mock Data with a Real API (Example: Unsplash API)
+- To use a real API instead of the mock data, follow these steps:
+  - Step 1: Sign Up for an API Key at Unsplash
+    - Go to the Unsplash Developer Portal.
+    - Sign in or create an account if you don't have one.
+    - Click Your Applications from the menu.
+    - Click on New Application to create a new app.
+    - Fill out the required details (name, description, etc.).
+    - After you submit, you will be provided with an Access Key and a Secret Key. You only need the Access Key for making API requests.
+    - Example Access Key: YOUR_ACCESS_KEY (Replace this with your actual key).
+   
+  - Step 2: Update Your JavaScript Code to Use Unsplash API
+    - Now Replace the mock data fetching with the Unsplash API call means replace // Fetch suggestions from the Unsplash API based on the search query code to below code,
+      ```
+      // Fetch suggestions from the Unsplash API based on the search query
+      async function fetchSuggestions(query) {
+          try {
+          suggestionsContainer.innerHTML = ''; // Clear the previous suggestions
+          noResultsMessage.classList.add('d-none');
+          errorMessage.classList.add('d-none');
+
+        if (!query) return;
+
+        if (!validateInput(query)) {
+            return; // Stop further execution if the input is invalid
+        }
+
+        // Replace the mock data array with an API call
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=YOUR_ACCESS_KEY`);
+        const data = await response.json(); // Parse the JSON response
+
+        // Check if no results are returned
+        if (data.results.length === 0) {
+            noResultsMessage.classList.remove('d-none');
+            return;
+        }
+
+        data.results.forEach((result, index) => {
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            listItem.innerHTML = highlightMatch(result.alt_description, query); // Highlight matching text
+            listItem.setAttribute('data-index', index);
+
+            listItem.addEventListener('click', () => {
+                searchBar.value = result.alt_description; // Set the selected result as the search input value
+                suggestionsContainer.innerHTML = ''; // Clear suggestions
+            });
+
+            suggestionsContainer.appendChild(listItem); // Add the suggestion to the container
+        });
+       } catch (error) {
+        errorMessage.classList.remove('d-none');
+        console.error('Error fetching suggestions:', error);
+       }
+      }
+
+      ```
+      
 
 ## Local Setup
 To run the project locally on your computer, follow these steps:
